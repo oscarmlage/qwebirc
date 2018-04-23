@@ -208,6 +208,9 @@ class AJAXEngine(resource.Resource):
     qticket = getSessionData(request).get("qticket")
     if qticket is None:
       perform = None
+      # This works, the query is open,  but the query tab is not being shown
+      # in the js interface
+      # perform = ["PRIVMSG r0sk :hey"]
     else:
       service_mask = config.AUTH_SERVICE
       msg_mask = service_mask.split("!")[0] + "@" + service_mask.split("@", 1)[1]

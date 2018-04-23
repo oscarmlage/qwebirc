@@ -42,7 +42,7 @@ qwebirc.irc.IRCClient = new Class({
     if(w) {
       w.addLine(type, data);
     } else {
-      this.statusWindow.addLine(type, data);
+      // this.statusWindow.addLine(type, data);
     }
   },
   newChanLine: function(channel, type, user, extra) {
@@ -62,10 +62,10 @@ qwebirc.irc.IRCClient = new Class({
     this.newLine(channel, type, extra);
   },
   newServerLine: function(type, data) {
-    this.statusWindow.addLine(type, data);
+    // this.statusWindow.addLine(type, data);
   },
   newServerInfoLine: function(type, data) {
-    this.statusWindow.infoMessage(type, data);
+    // this.statusWindow.infoMessage(type, data);
   },
   newActiveLine: function(type, data) {
     this.getActiveWindow().addLine(type, data);

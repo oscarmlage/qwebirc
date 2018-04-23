@@ -1,6 +1,7 @@
 qwebirc.ui.GenericLoginBox = function(parentElement, callback, initialNickname, initialChannels, autoConnect, autoNick, networkName) {
   if(autoConnect) {
-    qwebirc.ui.ConfirmBox(parentElement, callback, initialNickname, initialChannels, autoNick, networkName);
+    //qwebirc.ui.ConfirmBox(parentElement, callback, initialNickname, initialChannels, autoNick, networkName);
+    callback({"nickname": initialNickname, "autojoin": initialChannels});
   } else {
     qwebirc.ui.LoginBox(parentElement, callback, initialNickname, initialChannels, networkName);
   }
@@ -42,25 +43,6 @@ qwebirc.ui.ConfirmBox = function(parentElement, callback, initialNickname, initi
   
   var c = initialChannels.split(" ")[0].split(",");
   
-  text.appendChild(document.createTextNode("To connect to " + networkName + " IRC and join channel" + ((c.length>1)?"s":"") + " "));
-
-  for(var i=0;i<c.length;i++) {
-    if((c.length > 1) && (i == c.length - 1)) {
-      text.appendChild(document.createTextNode(" and "));
-    } else if(i > 0) {
-      text.appendChild(document.createTextNode(", "));
-    }
-    text.appendChild(new Element("b").set("text", c[i]));
-    
-  }
-  
-  if(!autoNick) {
-    text.appendChild(document.createTextNode(" as "));
-    text.appendChild(nick);
-  }
-  
-  text.appendChild(document.createTextNode(" click 'Connect'."));
-  text.appendChild(new Element("br"));
   if(qwebirc.auth.enabled() && qwebirc.auth.quakeNetAuth() && !qwebirc.auth.loggedin())
     text.appendChild(document.createTextNode("If you'd like to connect using your Q auth click 'Log in'."));
 
@@ -71,7 +53,7 @@ qwebirc.ui.ConfirmBox = function(parentElement, callback, initialNickname, initi
   var td = new Element("td");
   tr.appendChild(td);
 
-  var yes = new Element("input", {"type": "submit", "value": "Connect"});
+  var yes = new Element("input", {"type": "submit", "value": "Enter chat"});
   td.appendChild(yes);
   yes.addEvent("click", function(e) {
     parentElement.removeChild(outerbox);
