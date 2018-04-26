@@ -429,8 +429,12 @@ qwebirc.ui.StandardUI = new Class({
     if(name == "whois") {
       return ["span", function(nick) {
         if(this.uiOptions.QUERY_ON_NICK_CLICK) {
+          /* Disable click on nick for query */
+          return null;
           window.client.exec("/QUERY " + nick);
         } else {
+          /* Disable click on nick for whois */
+          return null;
           window.client.exec("/WHOIS " + nick);
         }
       }.bind(this)];
