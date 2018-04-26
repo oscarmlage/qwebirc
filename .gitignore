@@ -6,6 +6,7 @@ static/css
 static/css/debug
 static/panes/privacypolicy.html
 config.py
+js/config.js
 dropin.cache
 *.tap
 *.pyc
