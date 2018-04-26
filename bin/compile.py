@@ -108,6 +108,10 @@ def main(outputdir=".", produce_debug=True):
       alljs.append(os.path.join("js", y + ".js"))
     for y in value["uifiles"]:
       alljs.append(os.path.join("js", "ui", "frontends", y + ".js"))
+    # Add configfile support
+    configfile = os.path.join("js", "config.js")
+    if os.path.isfile(configfile):
+        alljs.append(configfile)
     jmerge_files(outputdir, "js", uiname + "-" + ID, alljs, file_prefix="QWEBIRC_BUILD=\"" + ID + "\";\n")
 
   os.rmdir(coutputdir)
