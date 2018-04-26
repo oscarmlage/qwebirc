@@ -7,6 +7,11 @@ qwebirc.ui.ConnectPane = new Class({
     var uiOptions = options.uiOptions;
     this.__windowName = "authgate_" + Math.floor(Math.random() * 100000);
 
+    initialNickname = qwebirc.eduno.DEFAULT_NICK || 'anon_' + Math.random().toString(36).substr(2, 5);
+    initialChannels = qwebirc.eduno.DEFAULT_CHANNEL || '#webinar';
+    var data = {nickname: initialNickname, autojoin: initialChannels};
+    this.options.callback(data);
+
     var delayfn = function() { parent.set("html", "<div class=\"loading\">Loading. . .</div>"); };
     var cb = delayfn.delay(500);
 
@@ -281,7 +286,8 @@ qwebirc.ui.LoginBox2 = function(parentElement, callback, initialNickname, initia
   */
 
   var connbutton = new Element("input", {"type": "submit"});
-  connbutton.set("value", "Connect");
+  msg = qwebirc.eduno.MSG_CONNECT || "Enter chat";
+  connbutton.set("value", msg);
   var r = createRow(undefined, connbutton);
   
   form.addEvent("submit", function(e) {

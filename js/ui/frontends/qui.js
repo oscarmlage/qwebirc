@@ -142,7 +142,8 @@ qwebirc.ui.QUI = new Class({
     var inputbox = new Element("input");
     this.addEvent("signedOn", function(client) {
       this.getStatusWindow(client).lines.removeClass("spinner");
-      inputbox.placeholder = "chat here! you can also use commands, like /JOIN";
+      msg = qwebirc.eduno.MSG_INPUT_PLACEHOLDER || "ask your questions here"
+      inputbox.placeholder = msg;
       var d = function() { inputbox.addClass("input-flash"); }.delay(250);
       var d = function() { inputbox.removeClass("input-flash"); }.delay(500);
       var d = function() { inputbox.addClass("input-flash"); }.delay(750);
@@ -478,6 +479,10 @@ qwebirc.ui.QUI.Window = new Class({
       this.nicklist.addClass("tab-invisible");
       this.nicklist.addEvent("click", this.removePrevMenu.bind(this));
       this.parentObject.qjsui.applyClasses("right", this.nicklist);
+
+      // Query teacher's user
+      teacher = qwebirc.eduno.TEACHER_NICK || "NickServ";
+      this.client.exec("/QUERY " + teacher);
 
       this.updateTopic("");
     }
