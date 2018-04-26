@@ -236,6 +236,7 @@ html {
 
 .qwebirc-qui .tabclose {
   margin-left: 5px;
+  font-size: 0.7em;
   line-height: 150%;
   vertical-align: top;
   padding-left: 3px;
@@ -362,11 +363,100 @@ div#noscript {
   margin-right: 3em;
 }
 
-iframe {
-  border: none;
+/* eduno hacks */
+
+#ircui {
+    background: #b9b9b9 !important;
 }
 
-.qwebirc-qui .spinner {
-  background: url($(base_url)../images/spinner.png) no-repeat $(lines_background);
-  background-position: top 5px right 5px;
+.topboundpanel .dropdown-tab {
+    display: none;
+}
+.topboundpanel .tabbar {
+    margin-left: 10px;
+}
+
+.topboundpanel .tabbar a {
+    cursor: pointer;
+}
+
+/* Hide burger button + status tab */
+.topboundpanel .tabbar a:first-of-type,
+.topboundpanel .tabbar a:nth-of-type(2) {
+    display: none !important;
+}
+
+.qwebirc-qui .topicboundpanel {
+    display: none !important;
+    /*
+    width: calc(100% - 25px) !important;
+    border-left: 10px solid #b9b9b9 !important;
+    border-right: 10px solid #b9b9b9 !important;
+    background: #ededed !important;
+    */
+}
+
+/* Top bar, tabs... */
+.qwebirc-qui .topboundpanel {
+    background-color: #b9b9b9 !important;
+}
+.qwebirc-qui .outertabbar_top {
+    border-bottom: 1px solid #b9b9b9 !important;
+}
+.qwebirc-qui a.tab {
+    padding: 5px 35px;
+    border: none !important;
+    border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+}
+.qwebirc-qui .tabbar {
+    font-size: 1.1em;
+}
+.tabbar .tab-selected {
+    font-weight: bold;
+}
+.qwebirc-qui .tabclose {
+    display: none;
+}
+
+/* Middle, irc, chat */
+.qwebirc-qui .lines, .qwebirc-qui .middleboundpanel {
+    background-color: #ffffff !important;
+}
+
+.qwebirc-qui .middleboundpanel {
+    top: 25px !important;
+    width: calc(100% - 40px) !important;
+    padding: 10px 10px 0px 10px !important;
+    border-top: 0;
+    border-bottom: 10px solid #b9b9b9 !important;
+    border-left: 10px solid #b9b9b9 !important;
+    border-right: 10px solid #b9b9b9 !important;
+}
+
+.qwebirc-qui .rightboundpanel {
+    display: none !important;
+}
+
+/* Bottom, bar and input */
+.qwebirc-qui .bottomboundpanel {
+    position: relative;
+    top: calc(100% - 50px);
+    width: calc(100% - 20px);
+    margin: 0 10px 20px 10px;
+    background: #b9b9b9 !important;
+}
+
+.qwebirc-qui div.input {
+    padding-left: 0px !important;
+}
+
+.qwebirc-qui .input input.keyboard-input {
+    width: calc(100% - 5px) !important;
+}
+
+/* Others */
+.qwebirc-qui a.tab-hilight-activity {
+    color: #535BF3 !important;
 }
