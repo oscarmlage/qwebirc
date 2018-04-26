@@ -271,7 +271,9 @@ qwebirc.irc.IRCClient = new Class({
     this.tracker.addNickToChannel(nick, channel);
 
     if(nick == this.nickname) {
-      this.newChanLine(channel, "OURJOIN", user);
+      if(!this.ui.uiOptions.HIDE_JOINPARTS) {
+        this.newChanLine(channel, "OURJOIN", user);
+      }
     } else {
       if(!this.ui.uiOptions.HIDE_JOINPARTS) {
         this.newChanLine(channel, "JOIN", user);

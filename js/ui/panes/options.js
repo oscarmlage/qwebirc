@@ -42,7 +42,7 @@ qwebirc.config.DEFAULT_OPTIONS = [
     enabled: qwebirc.ui.supportsFocus
   }],
   [9, "NICK_COLOURS", "Automatically colour nicknames", false],
-  [10, "HIDE_JOINPARTS", "Hide JOINS/PARTS/QUITS", false],
+  [10, "HIDE_JOINPARTS", "Hide JOINS/PARTS/QUITS", true],
   [11, "STYLE_HUE", "Adjust user interface hue", function(ui) {
     return {class_: qwebirc.config.HueOption, default_: ui.__styleValues.hue};
   }, {

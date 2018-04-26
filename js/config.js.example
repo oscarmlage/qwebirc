@@ -1,0 +1,11 @@
+qwebirc.AUTHOR = "oscar";
+
+qwebirc.eduno = {}
+qwebirc.eduno.TEACHER_NICK = "r0sk";
+qwebirc.eduno.DEFAULT_NICK = "edunostudent_" + Math.random().toString(36).substr(2, 5);
+qwebirc.eduno.DEFAULT_CHANNEL = "#international_pizza";
+
+qwebirc.eduno.MSG_INPUT_PLACEHOLDER = "Ask your questions here";
+qwebirc.eduno.MSG_PLEASE_WAIT = "Please wait while entering chat system...";
+qwebirc.eduno.MSG_CONNECT = "Enter chat";
+
