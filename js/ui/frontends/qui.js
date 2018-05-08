@@ -612,6 +612,11 @@ qwebirc.ui.QUI.Window = new Class({
     
     e.addEvent("focus", function() { this.blur() }.bind(e));
     this.moveMenuClass();
+    /* Hidding the public channel we should move to next active Window (private
+     * chat with teacher) */
+    if(this.name == qwebirc.eduno.DEFAULT_CHANNEL) {
+        this.parentObject.nextWindow();
+    }
     return e;
   },
   nickListRemove: function(nick, stored) {

@@ -386,6 +386,12 @@ div#noscript {
     display: none !important;
 }
 
+/* Hide the public channel */
+.topboundpanel .tabbar a:nth-of-type(3)
+{
+    display: none !important;
+}
+
 .qwebirc-qui .topicboundpanel {
     display: none !important;
     /*
