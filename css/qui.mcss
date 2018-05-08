@@ -466,3 +466,7 @@ div#noscript {
 .qwebirc-qui a.tab-hilight-activity {
     color: #535BF3 !important;
 }
+
+.qwebirc-loginbox {
+    display: none !important;
+}
