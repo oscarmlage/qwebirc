@@ -58,14 +58,14 @@ qwebirc.ui.QUI = new Class({
       }
 
       if(up) {
-        this.nextWindow();
+        // this.nextWindow();
       } else if(down) {
-        this.prevWindow();
+        // this.prevWindow();
       }
       event.stop();
     }.bind(this);
-    this.qjsui.left.addEvent("mousewheel", scrollHandler);
-    this.qjsui.top.addEvent("mousewheel", scrollHandler);
+    // this.qjsui.left.addEvent("mousewheel", scrollHandler);
+    // this.qjsui.top.addEvent("mousewheel", scrollHandler);
 
     this.createInput();
     this.reflow();
