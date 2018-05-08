@@ -7,8 +7,6 @@ qwebirc.ui.ConnectPane = new Class({
     var uiOptions = options.uiOptions;
     this.__windowName = "authgate_" + Math.floor(Math.random() * 100000);
 
-    initialNickname = qwebirc.eduno.DEFAULT_NICK || 'anon_' + Math.random().toString(36).substr(2, 5);
-    initialChannels = qwebirc.eduno.DEFAULT_CHANNEL || '#webinar';
     var data = {nickname: initialNickname, autojoin: initialChannels};
     this.options.callback(data);
 
