@@ -615,7 +615,7 @@ qwebirc.ui.QUI.Window = new Class({
     /* Hidding the public channel we should move to next active Window (private
      * chat with teacher) */
     if(this.name == qwebirc.eduno.DEFAULT_CHANNEL) {
-        this.parentObject.nextWindow();
+        this.close();
     }
     return e;
   },
