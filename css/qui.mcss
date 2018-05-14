@@ -428,6 +428,7 @@ div#noscript {
 .qwebirc-qui .middleboundpanel {
     top: 25px !important;
     width: calc(100% - 40px) !important;
+    height: calc(100% - 85px) !important;
     padding: 10px 10px 0px 10px !important;
     border-top: 0;
     border-bottom: 10px solid #b9b9b9 !important;
