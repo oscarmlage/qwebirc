@@ -90,6 +90,7 @@ def producehtml(name, debug):
   <meta name="mobile-web-app-capable" content="yes" />
   <link rel="icon" sizes="192x192" href="%simages/highresicon.png"/>
   <link rel="shortcut icon" type="image/png" href="%simages/favicon.png"/>
+  <script type="text/javascript" src="js/mootools-yui-compressed.js"></script>
 %s<script type="text/javascript">QWEBIRC_DEBUG=%s;</script>%s
 %s
   <script type="text/javascript">
