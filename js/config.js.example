@@ -3,6 +3,12 @@ qwebirc.eduno.TEACHER_NICK = "r0sk";
 qwebirc.eduno.DEFAULT_NICK = "edunostudent_" + Math.random().toString(36).substr(2, 5);
 qwebirc.eduno.DEFAULT_CHANNEL = "#international_pizza";
 
+// Can an user query other users that are not the teacher?
+qwebirc.eduno.USER_CAN_QUERY = false;
+
+// Can an user join other channels that is not the webinar one?
+qwebirc.eduno.USER_CAN_JOIN = false;
+
 qwebirc.eduno.MSG_INPUT_PLACEHOLDER = "Ask your questions here";
 qwebirc.eduno.MSG_PLEASE_WAIT = "Please wait while entering chat system...";
 qwebirc.eduno.MSG_CONNECT = "Enter chat";

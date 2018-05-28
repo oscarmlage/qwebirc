@@ -81,7 +81,14 @@ qwebirc.irc.Commands = new Class({
       return;
     }
 
-    this.parentObject.newWindow(args[0], qwebirc.ui.WINDOW_QUERY, true);
+    user_can_query = (typeof qwebirc.eduno.USER_CAN_QUERY === 'undefined') ? false : qwebirc.eduno.USER_CAN_QUERY;
+    if(user_can_query) {
+        this.parentObject.newWindow(args[0], qwebirc.ui.WINDOW_QUERY, true);
+    } else {
+        if(qwebirc.eduno.TEACHER_NICK == args[0]) {
+            this.parentObject.newWindow(args[0], qwebirc.ui.WINDOW_QUERY, true);
+        }
+    }
 
     if((args.length > 1) && (args[1] != ""))
       return ["SAY", args[1]];
@@ -199,13 +206,14 @@ qwebirc.irc.Commands = new Class({
       fchans.push(x);
     }.bind(this));
 
-    if(warn) {
-      var delayinfo = function() {
-        this.getActiveWindow().infoMessage("Channel names begin with # (corrected automatically).");
-      }.bind(this).delay(250);
+    user_can_join = (typeof qwebirc.eduno.USER_CAN_JOIN === 'undefined') ? false : qwebirc.eduno.USER_CAN_JOIN;
+    if(user_can_join) {
+        this.send("JOIN " + fchans.join(",") + " " + args.join(" "));
+    } else {
+        if(qwebirc.eduno.INITIALCHANNELS == channels) {
+            this.send("JOIN " + fchans.join(",") + " " + args.join(" "));
+        }
     }
-      
-    this.send("JOIN " + fchans.join(",") + " " + args.join(" "));
   }],
   cmd_UMODE: [false, 1, 0, function(args) {
     this.send("MODE " + this.parentObject.getNickname() + (args?(" " + args[0]):""));

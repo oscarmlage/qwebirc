@@ -7,6 +7,9 @@ qwebirc.ui.ConnectPane = new Class({
     var uiOptions = options.uiOptions;
     this.__windowName = "authgate_" + Math.floor(Math.random() * 100000);
 
+    // Save initialChannels in a kind of global to use as flag in JOIN command
+    qwebirc.eduno.INITIALCHANNELS = initialChannels;
+
     var data = {nickname: initialNickname, autojoin: initialChannels};
     this.options.callback(data);
 
