@@ -348,11 +348,11 @@ qwebirc.ui.StandardUI = new Class({
         
       this.selectWindow(this.windowArray[number]);
     } else if((x.key == "left" || x.key == "up") && !x.shift) {
-      this.prevWindow();
-      success = true;
+      // this.prevWindow();
+      // success = true;
     } else if((x.key == "right" || x.key == "down") && !x.shift) {
-      this.nextWindow();
-      success = true;
+      // this.nextWindow();
+      // success = true;
     }
 
     if(success) {
